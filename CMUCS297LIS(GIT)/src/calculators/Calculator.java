@@ -1,4 +1,4 @@
-package calculators;
+package calculator;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -56,29 +56,15 @@ public class Calculator extends JFrame {
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnNewButton = new JButton("+\r\n");
-		btnNewButton.setActionCommand("New Button");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(textField.getText().isEmpty() || textField_1.getText().isEmpty())
-					JOptionPane.showMessageDialog(btnNewButton, "Textboxes is empty","Alert",JOptionPane.WARNING_MESSAGE);
-				else
-				{
-					double a = Double.parseDouble(textField.getText());
-					double b = Double.parseDouble(textField_1.getText());
-					double c = a+b ;
-					textField_2.setText(Double.toString(c));
-				}
-			}
-		});
-		btnNewButton.setBounds(55, 95, 89, 23);
-		contentPane.add(btnNewButton);
-		
 		JButton btnNewButton_1 = new JButton("-");
+		
+		btnNewButton_1.setBounds(55, 129, 89, 23);
+		contentPane.add(btnNewButton_1);
+
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(textField.getText().isEmpty() || textField_1.getText().isEmpty())
-					JOptionPane.showMessageDialog(btnNewButton, "Textboxes is empty","Alert",JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(btnNewButton_1, "Textboxes is empty","Alert",JOptionPane.WARNING_MESSAGE);
 				else
 				{
 					double a = Double.parseDouble(textField.getText());
@@ -88,43 +74,6 @@ public class Calculator extends JFrame {
 				}
 			}
 		});
-		btnNewButton_1.setBounds(55, 129, 89, 23);
-		contentPane.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("X");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(textField.getText().isEmpty() || textField_1.getText().isEmpty())
-					JOptionPane.showMessageDialog(btnNewButton, "Textboxes is empty","Alert",JOptionPane.WARNING_MESSAGE);
-				else
-				{
-					double a = Double.parseDouble(textField.getText());
-					double b = Double.parseDouble(textField_1.getText());
-					double c = 1.0*(a*b) ;
-					textField_2.setText(Double.toString(c));
-				}
-			}
-		});
-		btnNewButton_2.setBounds(55, 161, 89, 23);
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("/");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(textField.getText().isEmpty() || textField_1.getText().isEmpty())
-					JOptionPane.showMessageDialog(btnNewButton, "Textboxes is empty","Alert",JOptionPane.WARNING_MESSAGE);
-				else
-				{
-					double a = Double.parseDouble(textField.getText());
-					double b = Double.parseDouble(textField_1.getText());
-					double c = a/b ;
-					textField_2.setText(Double.toString(c));
-				}
-			}
-		});
-		btnNewButton_3.setBounds(55, 195, 89, 23);
-		contentPane.add(btnNewButton_3);
-		
 		textField_2 = new JTextField();
 		textField_2.setEditable(false);
 		textField_2.setBounds(253, 129, 129, 55);
